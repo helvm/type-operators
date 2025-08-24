@@ -2,8 +2,13 @@
 {-# LANGUAGE CPP, TypeOperators, DataKinds, PolyKinds, TypeFamilies #-}
 
 -- | A collection of type-level operators.
-module Control.Type.Operator ( type (^>), type (<^), type ($), type (&)
-                             , type ($$), type (<+>), type (<=>)
+module Control.Type.Operator ( type (^>)
+                             , type (<^)
+                             , type ($)
+                             , type (&)
+                             , type ($$)
+--                             , type (<+>)
+                             , type (<=>)
                              ) where
 
 
@@ -92,10 +97,10 @@ infixl 9 <=>
 -- =
 -- a :: (Show a, Show b, Show c) => a -> b -> c -> String
 -- @
-type family (<+>) (a :: k1) (b :: k2) :: Constraint
-type instance (<+>) _ [] = (() :: Constraint)
-type instance (<+>) [] _ = (() :: Constraint)
-type instance (<+>) (c ': cs) (a :: Type) = (c a, a <+> cs)
-type instance (<+>) c (a ': as) = (c a, c <+> as)
-infixl 9 <+>
+--type family (<+>) (a :: k1) (b :: k2) :: Constraint
+--type instance (<+>) _ [] = (() :: Constraint)
+--type instance (<+>) [] _ = (() :: Constraint)
+--type instance (<+>) (c ': cs) (a :: Type) = (c a, a <+> cs)
+--type instance (<+>) c (a ': as) = (c a, c <+> as)
+--infixl 9 <+>
 
